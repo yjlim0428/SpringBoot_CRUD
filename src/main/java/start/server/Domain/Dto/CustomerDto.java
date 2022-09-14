@@ -15,8 +15,8 @@ public class CustomerDto {
     private Long id;
     private String name;
 
-    public static CustomerDto of(Customer customer) {   //Entity를  Dto로 바꾸는 함수
-
+    public static CustomerDto of(Customer customer) {
+//Entity를  Dto로 바꾸는 함수
         return CustomerDto.builder()
                 .id(customer.getId())
                 .name(customer.getName())
@@ -24,14 +24,16 @@ public class CustomerDto {
 
     }
 
-    public static Customer toEntity(CustomerDto customerDto)  {
 
+    public static Customer toEntity(CustomerDto customerDto)  {
+//Dto를 Entity로 바꾸는 함수
         return Customer.builder()
                 .id(customerDto.getId())
                 .name(customerDto.getName())
                 .build();
 
-    }  //Dto를 Entity로 바꾸는 함수
+    }
+
 
 
     public CustomerResponseDto toResponse() {
@@ -39,6 +41,12 @@ public class CustomerDto {
                 .name(this.name)
                 .build();
     }
+
+
+
+
+
+
 
 
 }

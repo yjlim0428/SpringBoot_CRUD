@@ -38,4 +38,18 @@ public class CustomerService {
         foundCustomer.setName(customerDto.getName());
         return CustomerDto.of(foundCustomer);
     }
+
+//    public CustomerDto delete(Long customerId){
+//        //지우고
+//        customerRepository.deleteById(customerId);
+//        //잘 지워졌는지 확인
+//        Customer foundCustomer = customerRepository.findById(customerId).orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "존재하지 않는 id 입니다."));
+//        return CustomerDto.of(foundCustomer) ;
+//
+//    }
+public String delete(Long customerId){
+    customerRepository.deleteById(customerId);
+    return "Deleted";
+}
+
 }

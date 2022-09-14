@@ -33,4 +33,13 @@ public class CustomerController {
             .body(customerService.update(customerDto).toResponse());
   }
 
+  @DeleteMapping("/delete/{id}")
+  public ResponseEntity<String> delete(@PathVariable(value = "id") Long customerId){
+    return ResponseEntity
+            .ok()
+            .body(customerService.delete(customerId));
+  }
+
+
+
 }
